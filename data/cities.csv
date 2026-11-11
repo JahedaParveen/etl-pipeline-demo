@@ -1,0 +1,9 @@
+city,country,latitude,longitude,timezone,population
+London,United Kingdom,51.5074,-0.1278,Europe/London,8866000
+New York,United States,40.7128,-74.0060,America/New_York,8336000
+Tokyo,Japan,35.6762,139.6503,Asia/Tokyo,14090000
+Sydney,Australia,-33.8688,151.2093,Australia/Sydney,5450000
+Mumbai,India,19.0760,72.8777,Asia/Kolkata,12480000
+Sao Paulo,Brazil,-23.5505,-46.6333,America/Sao_Paulo,11450000
+Cairo,Egypt,30.0444,31.2357,Africa/Cairo,10100000
+Berlin,Germany,52.5200,13.4050,Europe/Berlin,3770000

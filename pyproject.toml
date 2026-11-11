@@ -1,0 +1,17 @@
+[project]
+name = "etl-pipeline-demo"
+version = "1.0.0"
+description = "Hourly weather ETL pipeline with Prefect, PostgreSQL and Docker"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
