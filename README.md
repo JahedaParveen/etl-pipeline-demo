@@ -21,7 +21,7 @@ Python 3.11, Prefect 3, httpx, SQLAlchemy 2, psycopg 3, PostgreSQL 16, Docker Co
 You need [Docker Desktop](https://www.docker.com/products/docker-desktop/) (or Docker Engine with Compose v2.24+).
 
 ```bash
-git clone https://github.com/<your-account>/etl-pipeline-demo.git
+git clone https://github.com/JahedaParveen/etl-pipeline-demo.git
 cd etl-pipeline-demo
 cp .env.example .env        # PowerShell: Copy-Item .env.example .env
 docker compose up --build
