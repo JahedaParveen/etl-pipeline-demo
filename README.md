@@ -2,7 +2,7 @@
 
 A scheduled Python pipeline that pulls hourly weather for eight cities from a public API, validates it, and loads it into PostgreSQL, with retries, duplicate-safe loads and failure alerts.
 
-<!-- Screenshot coming soon: ![Prefect UI showing scheduled pipeline runs](screenshots/prefect-runs.png) -->
+![Prefect UI showing scheduled and manual pipeline runs](screenshots/runs.png)
 
 ## What it does
 
@@ -53,6 +53,8 @@ docker compose exec postgres psql -U etl -d weather -c "SELECT * FROM latest_cit
 docker compose exec postgres psql -U etl -d weather -f /sql/reports.sql
 ```
 
+![Latest clean reading for each city, queried from Postgres](screenshots/postgres-data.png)
+
 **Stop everything:** `docker compose down` (add `-v` to also delete the database).
 
 ## How it works
@@ -90,6 +92,8 @@ Set `SIMULATE_FAILURE` in `.env` and restart the worker with `docker compose up 
 
 - `SIMULATE_FAILURE=once` makes the first extract attempt fail. Prefect retries it and the run succeeds. You can see the retry in the Prefect UI.
 - `SIMULATE_FAILURE=always` makes every attempt fail. The run is marked as failed in `pipeline_runs` and an alert is sent.
+
+![A run where the first extract attempt failed, was retried and then succeeded](screenshots/retry-run.png)
 
 To send alerts to Slack or Teams, paste an incoming webhook URL into `ALERT_WEBHOOK_URL` and set `ALERT_FORMAT` to `slack` or `teams`.
 
